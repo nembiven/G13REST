@@ -3,7 +3,7 @@ Aplicación de Ejemplo para el uso de un microservicio REST, está construido en
 # Integrantes
 - Nicole Sáez Trincado
 - Vicente Sepúlveda Ruz
-- 
+
 ## Entorno de desarrollo recomendado
 Para facilidad de desarrollo se aconseja usar Ubuntu 20.04 LTS. Los ejemplos asumen esta distribución.
 
