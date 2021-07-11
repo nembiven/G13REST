@@ -32,8 +32,12 @@ CREATE TABLE sismo (
 	primary key (pk)
 );
 
+-- Auto-generated SQL script #202107111934
+INSERT INTO public.credentials (pk,"token",app,"password",active)
+	VALUES (1,'8c071b2c-e2a0-11eb-ba80-0242ac130004','utem','1234',true);
 
 COMMIT;
+
 
 
 
