@@ -1,6 +1,9 @@
 # Proyecto
 Aplicación de Ejemplo para el uso de un microservicio REST, está construido en Java 8 (o superior) y requiere una conexión a Base de datos (PostgreSQL)
-
+# Integrantes
+- Nicole Sáez Trincado
+- Vicente Sepúlveda Ruz
+- 
 ## Entorno de desarrollo recomendado
 Para facilidad de desarrollo se aconseja usar Ubuntu 20.04 LTS. Los ejemplos asumen esta distribución.
 
