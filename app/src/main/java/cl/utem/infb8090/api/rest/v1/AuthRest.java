@@ -46,6 +46,7 @@ public class AuthRest implements Serializable {
         @ApiResponse(code = 403, message = "No tiene permisos", response = ErrorVO.class),
         @ApiResponse(code = 412, message = "Falló alguna precondición", response = ErrorVO.class)
     })
+    @CrossOrigin(origins = "*")
     @PostMapping(value = "/", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
     public ResponseEntity login(@RequestBody LoginVO request) {
         /**
