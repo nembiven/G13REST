@@ -70,6 +70,7 @@ public class SismoRest implements Serializable {
         @ApiResponse(code = 404, message = "No se ha encontrado la información solicitada", response = ErrorVO.class),
         @ApiResponse(code = 412, message = "Falló alguna precondición", response = ErrorVO.class)
     })
+    @CrossOrigin(origins = "*")
     @GetMapping(value = "/", consumes = {"*/*"}, produces = {"application/json;charset=utf-8"})
     public ResponseEntity getAll(@ApiParam(name = "Authentication", value = "Cabecera de autenticación", required = true, example = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
             @RequestHeader(name = "Authentication", required = true) String bearer) throws IOException {
