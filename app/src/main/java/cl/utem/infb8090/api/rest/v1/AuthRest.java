@@ -58,7 +58,7 @@ public class AuthRest implements Serializable {
             LOGGER.error("No hay cuerpo de mensaje");
             throw new CpydException(400, "La petición es inválida");
         }
-        if(httpRequest.getMethod().equals("OPTIONS")
+        if(httpRequest.getMethod().equals("OPTIONS"))
            {
                httpRequest.setStatus(HttpServletResponse.SC_OK);
                return;
