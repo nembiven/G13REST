@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @RequestMapping(value = "/Auth", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
 public class AuthRest implements Serializable {
 
@@ -97,7 +97,7 @@ public class AuthRest implements Serializable {
             throw new CpydException(403, "No tiene permiso para acceder a este recurso");
         }
 
-        final String jwt = JwtUtils.createJwt("/G13/Auth", ip, credential);
+        final String jwt = JwtUtils.createJwt("/grupo-t/Auth", ip, credential);
         if (StringUtils.isBlank(jwt)) {
             LOGGER.error("NO pude generar el JWT");
             throw new CpydException("No fue posible completar su petición");
