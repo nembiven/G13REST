@@ -46,6 +46,7 @@ import org.jsoup.nodes.Element;
 
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping(value = "/earthquakes", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
 public class SismoRest implements Serializable {
     
