@@ -61,7 +61,6 @@ public class AuthRest implements Serializable {
         if(httpRequest.getMethod().equals("OPTIONS"))
            {
                httpRequest.setStatus(HttpServletResponse.SC_OK);
-               return;
            }
 
         /**
