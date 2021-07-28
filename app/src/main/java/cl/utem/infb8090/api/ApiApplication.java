@@ -57,7 +57,7 @@ public class ApiApplication {
     public FilterRegistrationBean<SimpleCorsFilter> simpleCorsFilter() {
         FilterRegistrationBean<SimpleCorsFilter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(new SimpleCorsFilter());
-        registrationBean.addUrlPatterns("/grupo-t");
+        registrationBean.addUrlPatterns("/G13");
         return registrationBean;
     }
     @EventListener(ApplicationReadyEvent.class)
@@ -110,5 +110,4 @@ public void Scrapping() throws IOException {
     
     
 }
-
 
