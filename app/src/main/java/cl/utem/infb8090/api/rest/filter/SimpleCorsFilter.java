@@ -26,7 +26,7 @@ public class SimpleCorsFilter implements Filter {
         response.addHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
         response.addHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Credentials, Access-Control-Allow-Origin, Origin, Accept, Content-Type, Authentication");
         
-        System.out.println("This is MyFilter.url :"+response.getRequestURI());
+        System.out.println("This is MyFilter.url :"+request.getRequestURI());
                            
         final String method = StringUtils.trimToEmpty(request.getMethod());
         if (StringUtils.equalsIgnoreCase("OPTIONS", method)) {
