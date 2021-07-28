@@ -19,15 +19,15 @@ public class SimpleCorsFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-        System.out.println(request);
-        System.out.println(response);
 
         response.setLocale(CL);
         response.addHeader("Access-Control-Allow-Origin", "*");
         response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
         response.addHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
         response.addHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Credentials, Access-Control-Allow-Origin, Origin, Accept, Content-Type, Authentication");
-
+        
+        System.out.println("This is MyFilter.url :"+response.getRequestURI());
+                           
         final String method = StringUtils.trimToEmpty(request.getMethod());
         if (StringUtils.equalsIgnoreCase("OPTIONS", method)) {
             response.addHeader("Access-Control-Allow-Origin", "*");
