@@ -21,10 +21,12 @@ public class SimpleCorsFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
         response.setLocale(CL);
-        response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        
+        
         //response.addHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
         response.addHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Credentials, Accept, Content-Type, Authentication");
+        response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        response.addHeader("Access-Control-Allow-Origin", "*");
         
         System.out.println("This is MyFilter.url :"+request.getRequestURI());
                            
