@@ -19,15 +19,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
-@CrossOrigin(origins = "*")
-@RequestMapping(value = "/", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
+@RequestMapping(value = "/Auth", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
 public class AuthRest implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -48,8 +47,8 @@ public class AuthRest implements Serializable {
         @ApiResponse(code = 403, message = "No tiene permisos", response = ErrorVO.class),
         @ApiResponse(code = 412, message = "Falló alguna precondición", response = ErrorVO.class)
     })
-    //@CrossOrigin(origins = "*")
-    @PostMapping(value = "/Auth", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
+    @CrossOrigin(origins = "*")
+    @PostMapping(value = "/", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
     public ResponseEntity login(@RequestBody LoginVO request) {
         /**
          * Validar que exista un objeto de entrada
@@ -97,7 +96,7 @@ public class AuthRest implements Serializable {
             throw new CpydException(403, "No tiene permiso para acceder a este recurso");
         }
 
-        final String jwt = JwtUtils.createJwt("/grupo-t/Auth", ip, credential);
+        final String jwt = JwtUtils.createJwt("/G13/Auth", ip, credential);
         if (StringUtils.isBlank(jwt)) {
             LOGGER.error("NO pude generar el JWT");
             throw new CpydException("No fue posible completar su petición");
