@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(value = "/Auth", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
+@RequestMapping(value = "/", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
 public class AuthRest implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,7 +49,7 @@ public class AuthRest implements Serializable {
         @ApiResponse(code = 412, message = "Falló alguna precondición", response = ErrorVO.class)
     })
     //@CrossOrigin(origins = "*")
-    @PostMapping(value = "/", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
+    @PostMapping(value = "/Auth", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
     public ResponseEntity login(@RequestBody LoginVO request) {
         /**
          * Validar que exista un objeto de entrada
