@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(value = "/Auth", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
+@RequestMapping(value = "/Auth/", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
 public class AuthRest implements Serializable {
 
     private static final long serialVersionUID = 1L;
