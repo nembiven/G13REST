@@ -13,7 +13,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.io.Serializable;
 
@@ -43,10 +42,10 @@ import javax.annotation.PostConstruct;
 import lombok.SneakyThrows;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 @RestController
-@CrossOrigin(origins = "*")
 @RequestMapping(value = "/earthquakes", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
 public class SismoRest implements Serializable {
     
