@@ -23,7 +23,7 @@ public class SimpleCorsFilter implements Filter {
         response.setLocale(CL);
         response.addHeader("Access-Control-Allow-Origin", "*");
         response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-        response.addHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Credentials, Access-Control-Allow-Origin, Origin, Accept, Content-Type, Authentication");
+        response.addHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Credentials, Access-Control-Allow-Origin, Origin, Accept, Content-Type, Authentication,Authorization");
 
         final String method = StringUtils.trimToEmpty(request.getMethod());
         if (StringUtils.equalsIgnoreCase("OPTIONS", method)) {
